@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import { STATUS_CODES } from "./constants/httpCodes.js";
 import { Env_Consts } from "./constants/envConsts.js";
 import connectDB from "./config/db.js";
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get("/", (req, res) => {
-  res.status(200).json({
+  res.status(STATUS_CODES.OK).json({
     message: "Welcome to the API",
   });
 });
