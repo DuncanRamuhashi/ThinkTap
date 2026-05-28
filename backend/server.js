@@ -28,3 +28,13 @@ app.get("/", (req, res) => {
   });
 });
 
+// Error Middleware
+app.use(notFound);
+app.use(errorHandler);
+
+// Start Server
+app.listen(Env_Consts.PORT, () => {
+  console.log(`Server running on port ${Env_Consts.PORT}`);
+});
+
+export default app;
