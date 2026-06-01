@@ -14,7 +14,7 @@ connectDB();
 // Middleware
 app.use(cors({
   origin: [
-    Env_Consts.FRONTEND_URL || "http://localhost:5000",
+    Env_Consts.FRONTEND_URL || "http://localhost:5000", // dont forget to change the origin
   ],
   credentials: true,
 }));
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.get("/", (req, res) => {
   res.status(STATUS_CODES.OK).json({
-    message: "Welcome to the API",
+    message: "Welcome to the ThinkTap API",
   });
 });
 
